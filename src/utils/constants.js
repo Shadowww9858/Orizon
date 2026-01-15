@@ -34,7 +34,14 @@ export const API_OPTIONS = {
     }
 };
 
-export const GPT_QUERY = ". Check if query is related to movies or tv shows, recommend the movies or shows that best describe the query. query can be in different language, but give results in english only. I need minimum 10 results unless the query just describes a single movie/show or unrelated text. I need results strictly in raw json format, list of objects with movie/show name, type (movie/show) and release year. Else return a empty array."
+export const GEMINI_KEY = "AIzaSyCu3QFU_y6uRn61zPAzRbSxXo5Y7FPXJs4";
+
+export const GPT_QUERY = 
+  "Act as a Orizon Movie Recommendation system. Query: ";
+
+export const GPT_QUERY_SECONDARY = 
+  ". Only give me names of 5 movies or series, comma separated like the example result given ahead. Example Result: Gadar, Sholay, Don, Golmaal, Koi Mil Gaya";
+
 
 
 // LOGO
