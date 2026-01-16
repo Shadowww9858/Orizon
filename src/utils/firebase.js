@@ -1,22 +1,18 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getFirestore } from "firebase/firestore"; // 1. Import Firestore
 
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAKH20adtSvngIb91poGbkKK7gtarmp8Ek",
-  authDomain: "orizon-f628a.firebaseapp.com",
-  projectId: "orizon-f628a",
-  storageBucket: "orizon-f628a.firebasestorage.app",
-  messagingSenderId: "1088412334986",
-  appId: "1:1088412334986:web:205e049b711b0c0cb2a673",
-  measurementId: "G-LREZXC46GF"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-export const auth = getAuth();
+
+// 2. Export the variables so other files can see them
+export const auth = getAuth(app);
+export const db = getFirestore(app); // This is the line you are likely missing!
